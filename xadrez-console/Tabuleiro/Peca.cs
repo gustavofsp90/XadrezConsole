@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Tabuleiro;
+using tabuleiro;
 
 namespace tabuleiro
 {
     class Peca
     {
-        public Peca(Posicao posicao, Cor cor, int qteMovimentos, Tabuleiro tab) {
-            Posicao = posicao;
+        public Peca(Cor cor, Tabuleiro tab) {
+            Posicao = null;
             Cor = cor;
             this.qteMovimentos = 0;
             Tab = tab;

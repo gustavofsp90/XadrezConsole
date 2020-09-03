@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using tabuleiro;
 
-namespace xadrez_console.tabuleiro
+namespace tabuleiro
 {
     class Tela
     {
@@ -13,12 +13,16 @@ namespace xadrez_console.tabuleiro
             {
                 for (int j = 0; j < tab.Colunas; j++)
                 {
-                    if (tab.Peca(i,j) == null)
+                    if (tab.Peca(i, j) == null)
                     {
-                        Console.WriteLine(tab.Peca(i, j));
+                        Console.Write("- ");
                     }
-                    
+                    else
+                    {
+                        Console.Write(tab.Peca(i, j) + " ");
+                    }                    
                 }
+                Console.WriteLine();
 
             }
 
