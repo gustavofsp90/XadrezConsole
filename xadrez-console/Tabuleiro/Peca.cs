@@ -21,9 +21,26 @@ namespace tabuleiro
         public void IncrementarAQuantidadedeMovimentos() {
             QteMovimentos++;
         }
+        public bool ExisteMovimentosPossiveis() {
+            bool[,] mat = MovimentosPossives();
+            for (int i = 0; i < Tab.Linhas; i++)
+            {
+                for (int j = 0; j < Tab.Colunas; j++)
+                {
+                    if (mat[i, j])
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+        public bool PodeMoverPara(Posicao pos) {
+            return MovimentosPossives()[pos.Linha, pos.Coluna];
+        }
 
         public abstract bool[,] MovimentosPossives();
 
-      
+
     }
 }
