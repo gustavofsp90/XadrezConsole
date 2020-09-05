@@ -1,7 +1,5 @@
-﻿namespace tabuleiro
-{
-    class Tabuleiro
-    {
+﻿namespace tabuleiro {
+    class Tabuleiro {
         public int Linhas { get; set; }
         public int Colunas { get; set; }
         private Peca[,] Pecas;
@@ -23,16 +21,14 @@
             return Peca(pos) != null;
         }
         public void ColocarPeca(Peca p, Posicao pos) {
-            if (ExistePeca(pos))
-            {
+            if (ExistePeca(pos)) {
                 throw new TabuleiroException("Ja existe uma peca nessa posicao");
             }
             Pecas[pos.Linha, pos.Coluna] = p;
             p.Posicao = pos;
         }
-        public Peca RetirarPeca(Posicao pos) { 
-            if (Peca(pos) == null)
-            {
+        public Peca RetirarPeca(Posicao pos) {
+            if (Peca(pos) == null) {
                 return null;
             }
             Peca aux = Peca(pos);
@@ -41,14 +37,13 @@
             return aux;
         }
         public bool PosicaoValida(Posicao pos) {
-            if(pos.Linha < 0 || pos.Linha >= 8 || pos.Coluna < 0 || pos.Coluna >= 8) {
-                return false;            
+            if (pos.Linha < 0 || pos.Linha >= 8 || pos.Coluna < 0 || pos.Coluna >= 8) {
+                return false;
             }
             return true;
         }
         public void ValidarPosicao(Posicao pos) {
-            if (!PosicaoValida(pos))
-            {
+            if (!PosicaoValida(pos)) {
                 throw new TabuleiroException("Posicao invalida: ");
             }
 

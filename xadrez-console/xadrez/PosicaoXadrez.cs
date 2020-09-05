@@ -1,9 +1,7 @@
 ﻿using tabuleiro;
 
-namespace xadrez
-{
-    class PosicaoXadrez
-    {
+namespace xadrez {
+    class PosicaoXadrez {
         public PosicaoXadrez(char coluna, int linha) {
             Coluna = coluna;
             Linha = linha;

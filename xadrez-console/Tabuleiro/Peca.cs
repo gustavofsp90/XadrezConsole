@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using tabuleiro;
 
-namespace tabuleiro
-{
-    abstract class Peca
-    {
+namespace tabuleiro {
+    abstract class Peca {
         public Peca(Cor cor, Tabuleiro tab) {
             Posicao = null;
             Cor = cor;
@@ -26,12 +24,9 @@ namespace tabuleiro
         }
         public bool ExisteMovimentosPossiveis() {
             bool[,] mat = MovimentosPossives();
-            for (int i = 0; i < Tab.Linhas; i++)
-            {
-                for (int j = 0; j < Tab.Colunas; j++)
-                {
-                    if (mat[i, j])
-                    {
+            for (int i = 0; i < Tab.Linhas; i++) {
+                for (int j = 0; j < Tab.Colunas; j++) {
+                    if (mat[i, j]) {
                         return true;
                     }
                 }
